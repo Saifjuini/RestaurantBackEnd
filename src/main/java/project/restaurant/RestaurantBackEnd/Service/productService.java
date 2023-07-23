@@ -1,5 +1,6 @@
 package project.restaurant.RestaurantBackEnd.Service;
 
+import project.restaurant.RestaurantBackEnd.Enumeration.Category;
 import project.restaurant.RestaurantBackEnd.Model.Product;
 
 import java.util.Collection;
@@ -10,6 +11,7 @@ public interface productService {
   List<Product> listProduct();
   Product updateProduct(Product product);
 
+  List<Product> findProductsByCategory(Category productCategory);
   Product findProductByName(String productName);
 
   void deleteProduct(Long id);

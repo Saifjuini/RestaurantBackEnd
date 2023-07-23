@@ -1,11 +1,12 @@
 package project.restaurant.RestaurantBackEnd.Model;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import project.restaurant.RestaurantBackEnd.Enumeration.Category;
+
+import java.util.Date;
+
 
 import static jakarta.persistence.GenerationType.AUTO;
 
@@ -13,14 +14,20 @@ import static jakarta.persistence.GenerationType.AUTO;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+
+public class UserBookTable {
     @Id
     @GeneratedValue(strategy = AUTO)
     private Long id;
-    private  String productName;
-    private String productDescription;
-    private Float productPrice;
-    private String productPicture;
-    @Enumerated(EnumType.STRING)
-    private Category productCategory;
+    private String Nom;
+    private String Prenom;
+    private Long phone;
+    private String numberOfPersons;
+    private String email;
+    private Date date;
+
+    @OneToOne
+    @JoinColumn(name = "id")
+    private AvailableTable availableTable;
+
 }

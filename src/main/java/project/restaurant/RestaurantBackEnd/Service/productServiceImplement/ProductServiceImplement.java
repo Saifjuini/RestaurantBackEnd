@@ -3,6 +3,7 @@ package project.restaurant.RestaurantBackEnd.Service.productServiceImplement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import project.restaurant.RestaurantBackEnd.Enumeration.Category;
 import project.restaurant.RestaurantBackEnd.Model.Product;
 import project.restaurant.RestaurantBackEnd.Repository.ProductRepo;
 import project.restaurant.RestaurantBackEnd.Service.productService;
@@ -27,6 +28,11 @@ public class ProductServiceImplement implements productService {
     @Override
     public Product updateProduct(Product product) {
         return null;
+    }
+
+    @Override
+    public List<Product> findProductsByCategory(Category productCategory) {
+        return productRepo.findByProductCategory(productCategory);
     }
 
     @Override
