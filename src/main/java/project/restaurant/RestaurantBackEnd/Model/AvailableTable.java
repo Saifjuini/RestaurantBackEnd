@@ -1,5 +1,6 @@
 package project.restaurant.RestaurantBackEnd.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -26,7 +27,5 @@ public class AvailableTable {
     private Status status = Status.available;
     private TableCategory tableType;
 
-    @OneToOne(mappedBy = "availableTable")
-    private UserBookTable userBookTable;
 }
 

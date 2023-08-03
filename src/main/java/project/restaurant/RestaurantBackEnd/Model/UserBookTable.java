@@ -1,6 +1,7 @@
 package project.restaurant.RestaurantBackEnd.Model;
 
 import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,15 +20,14 @@ public class UserBookTable {
     @Id
     @GeneratedValue(strategy = AUTO)
     private Long id;
-    private String Nom;
-    private String Prenom;
+    private String name;
+    private String lastName;
     private Long phone;
-    private String numberOfPersons;
+    private Long numberOfPersons;
     private String email;
     private Date date;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "FK_add_id")
     private AvailableTable availableTable;
-
 }

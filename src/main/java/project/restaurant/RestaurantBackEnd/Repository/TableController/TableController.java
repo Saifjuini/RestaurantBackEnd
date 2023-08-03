@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import project.restaurant.RestaurantBackEnd.Model.AvailableTable;
 import project.restaurant.RestaurantBackEnd.Service.TableServiceImplement.TableServiceImplement;
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -24,6 +25,12 @@ public class TableController {
     public ResponseEntity<AvailableTable> addTable(@RequestBody AvailableTable tableBook){
         AvailableTable tableBook1= tableServiceImplement.addTable(tableBook);
         return new ResponseEntity<>(tableBook1 , HttpStatus.CREATED);
+    }
+    @GetMapping("/getTableById/{id}")
+    public ResponseEntity<AvailableTable> getTableById(@PathVariable Long id){  
+        AvailableTable availableTableById=tableServiceImplement.getTableById(id);
+        System.out.println(availableTableById);
+        return new ResponseEntity<>(availableTableById , HttpStatus.OK);
     }
 
 

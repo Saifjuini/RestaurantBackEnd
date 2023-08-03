@@ -1,7 +1,6 @@
 package project.restaurant.RestaurantBackEnd.Service;
 
 import project.restaurant.RestaurantBackEnd.Model.UserBookTable;
-import project.restaurant.RestaurantBackEnd.Repository.UserTableRepo;
 
 import java.util.List;
 

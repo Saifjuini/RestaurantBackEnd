@@ -8,6 +8,7 @@ import project.restaurant.RestaurantBackEnd.Repository.TableRepo;
 import project.restaurant.RestaurantBackEnd.Service.TableService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -25,6 +26,11 @@ public class TableServiceImplement implements TableService {
     @Override
     public List<AvailableTable> listTables() {
         return tableRepo.findAll();
+    }
+
+    @Override
+    public AvailableTable getTableById(Long id) {
+        return tableRepo.findById(id).orElse(null);
     }
 
     @Override

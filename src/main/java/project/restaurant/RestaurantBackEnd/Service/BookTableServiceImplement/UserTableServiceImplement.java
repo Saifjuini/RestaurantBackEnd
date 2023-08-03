@@ -1,9 +1,9 @@
-package project.restaurant.RestaurantBackEnd.Service.UserTableServiceImplement;
+package project.restaurant.RestaurantBackEnd.Service.BookTableServiceImplement;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import project.restaurant.RestaurantBackEnd.Model.UserBookTable;
-import project.restaurant.RestaurantBackEnd.Repository.UserTableRepo;
+import project.restaurant.RestaurantBackEnd.Repository.BookTableRepo;
 import project.restaurant.RestaurantBackEnd.Service.UserTableService;
 
 import java.util.List;
@@ -12,14 +12,14 @@ import java.util.List;
 @RequiredArgsConstructor
 
 public class UserTableServiceImplement implements UserTableService {
-private final UserTableRepo userTableRepo;
+private final BookTableRepo bookTableRepo;
     @Override
     public UserBookTable bookTable(UserBookTable userBookTable) {
-        return userTableRepo.save(userBookTable);
+        return bookTableRepo.save(userBookTable);
     }
 
     @Override
     public List<UserBookTable> listOfDemands() {
-        return userTableRepo.findAll();
+        return bookTableRepo.findAll();
     }
 }
