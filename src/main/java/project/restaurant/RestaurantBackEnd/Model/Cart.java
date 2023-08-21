@@ -1,24 +1,23 @@
 package project.restaurant.RestaurantBackEnd.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import static jakarta.persistence.GenerationType.AUTO;
-
+import java.util.ArrayList;
+import java.util.List;
 @Entity
-@NoArgsConstructor
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Cart {
-   @Id
-    @GeneratedValue(strategy = AUTO)
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long CartId;
 
-
+    @OneToMany(mappedBy = "cart",
+               cascade = CascadeType.ALL)
+    private List<CartItem> cartItems = new ArrayList<>();
 
 }
